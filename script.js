@@ -171,19 +171,41 @@ movements.forEach(function (movement, i , arr) {
 ////// FOR EACH FOR MAPS AND SETS
 
 // MAP
-const currencies = new Map([
-  ['USD', 'United States dollar'],
-  ['EUR', 'Euro'],
-  ['GBP', 'Pound sterling'],
-]);
+// const currencies = new Map([
+//   ['USD', 'United States dollar'],
+//   ['EUR', 'Euro'],
+//   ['GBP', 'Pound sterling'],
+// ]);
 
-currencies.forEach(function (value, key, map) {
-  console.log(`${key}: ${value}`);
+// currencies.forEach(function (value, key, map) {
+//   console.log(`${key}: ${value}`);
+// });
+
+// // SET
+// const currenciesUnique = new Set(['USD', 'GBP', 'USD', 'EUR', 'EUR']);
+// console.log(currenciesUnique);
+// currenciesUnique.forEach(function (value, _, map) {
+//   console.log(`${value}: ${value}`);
+// });
+
+// DATA TRANSFORMATIONS
+// MAP, FILTER and REDUCE
+
+//// THE MAP METHOD
+
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+const eurToUsd = 1.1;
+
+const movementsUSD = movements.map(function (mov) {
+  return mov * eurToUsd;
 });
 
-// SET
-const currenciesUnique = new Set(['USD', 'GBP', 'USD', 'EUR', 'EUR']);
-console.log(currenciesUnique);
-currenciesUnique.forEach(function (value, _, map) {
-  console.log(`${value}: ${value}`);
-});
+console.log(movements);
+console.log(movementsUSD);
+
+const movementsUSDfor = [];
+
+for (const mov of movements) movementsUSDfor.push(mov * eurToUsd);
+
+console.log(movementsUSDfor);
