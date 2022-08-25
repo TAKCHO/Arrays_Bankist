@@ -81,6 +81,20 @@ const displayMovements = function (movements) {
 
 displayMovements(account1.movements);
 
+const creatUsernames = function (accs) {
+  accs.forEach(function (acc) {
+    acc.username = acc.owner
+      .toLowerCase()
+      .split(' ')
+      .map(function (name) {
+        return name[0];
+      })
+      .join('');
+  });
+};
+
+creatUsernames(accounts); // stw
+
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
@@ -193,7 +207,7 @@ movements.forEach(function (movement, i , arr) {
 
 //// THE MAP METHOD
 
-const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+/* const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 const eurToUsd = 1.1;
 
@@ -221,3 +235,4 @@ const movementsDescriptions = movements.map((mov, i, arr) => {
 });
 
 console.log(movementsDescriptions);
+ */
