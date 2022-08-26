@@ -258,3 +258,17 @@ const withdrawals = movements.filter(function (mov) {
 });
 
 console.log(withdrawals); */
+
+/////// THE REDUCE METHOD
+
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+console.log(movements);
+
+//accumulator is like a SNOWBALL
+const balance = movements.reduce(function (acc, cur, i, arr) {
+  console.log(`Iteration ${i}: ${acc}`);
+  return acc + cur;
+}, 0);
+
+console.log(balance);
