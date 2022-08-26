@@ -87,8 +87,6 @@ const calcDisplayBalance = function (movements) {
 };
 calcDisplayBalance(account1.movements);
 
-console.log(calcDisplayBalance);
-
 const creatUsernames = function (accs) {
   accs.forEach(function (acc) {
     acc.username = acc.owner
@@ -107,7 +105,7 @@ creatUsernames(accounts); // stw
 /////////////////////////////////////////////////
 // LECTURES
 
-// const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
 
@@ -269,9 +267,9 @@ console.log(withdrawals); */
 
 /////// THE REDUCE METHOD
 
-const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+/* const movements = [200, 450, -400, 3000, -650, -130, 70, 1300]; */
 
-console.log(movements);
+/* console.log(movements);
 
 //accumulator is like a SNOWBALL
 const balance = movements.reduce(function (acc, cur, i, arr) {
@@ -292,3 +290,21 @@ const max = movements.reduce((acc, mov) => {
 }, movements[0]);
 
 console.log(max);
+ */
+
+///////THE MAGIC OF CHAINING METHODS
+
+const eurToUsd = 1.1;
+console.log(movements);
+
+//PIPELINE
+const totalDepositsUSD = movements
+  .filter(mov => mov > 0)
+  //   .map(mov => mov * eurToUsd)
+  .map((mov, i, arr) => {
+    // console.log(arr);
+    return mov * eurToUsd;
+  })
+  .reduce((acc, mov) => acc + mov, 0);
+
+console.log(totalDepositsUSD);
