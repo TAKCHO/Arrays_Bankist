@@ -202,7 +202,13 @@ btnClose.addEventListener('click', function (e) {
     );
     console.log(index);
 
-    // accounts.splice(index, 1);
+    // .indexof(23)
+
+    // Delete account
+    accounts.splice(index, 1);
+
+    // HIDE UI
+    containerApp.style.opacity = 0;
   }
 });
 
