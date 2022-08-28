@@ -481,9 +481,23 @@ console.log(arr.flat());
 const arrDeep = [[[1, 2], 3], [4, [5, 6]], 7, 8];
 console.log(arrDeep.flat(2)); // 2 is the level
 
-const accountMovements = accounts.map(acc => acc.movements);
-console.log(accountMovements);
-const allMovements = accountMovements.flat();
-console.log(allMovements);
-const overalBalance = allMovements.reduce((acc, mov) => acc + mov, 0);
+// const accountMovements = accounts.map(acc => acc.movements);
+// console.log(accountMovements);
+// const allMovements = accountMovements.flat();
+// console.log(allMovements);
+// const overalBalance = allMovements.reduce((acc, mov) => acc + mov, 0);
+// console.log(overalBalance);
+
+// flat
+const overalBalance = accounts
+  .map(acc => acc.movements)
+  .flat()
+  .reduce((acc, mov) => acc + mov, 0);
+console.log(overalBalance);
+
+// FLATMAP
+
+const overalBalance2 = accounts
+  .flatMap(acc => acc.movements)
+  .reduce((acc, mov) => acc + mov, 0);
 console.log(overalBalance);
