@@ -210,6 +210,8 @@ btnClose.addEventListener('click', function (e) {
     // HIDE UI
     containerApp.style.opacity = 0;
   }
+
+  inputCloseUsername.value = inputClosePin.value = '';
 });
 
 /////////////////////////////////////////////////
