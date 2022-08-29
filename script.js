@@ -488,16 +488,45 @@ console.log(arrDeep.flat(2)); // 2 is the level
 // const overalBalance = allMovements.reduce((acc, mov) => acc + mov, 0);
 // console.log(overalBalance);
 
-// flat
-const overalBalance = accounts
-  .map(acc => acc.movements)
-  .flat()
-  .reduce((acc, mov) => acc + mov, 0);
-console.log(overalBalance);
+// // flat
+// const overalBalance = accounts
+//   .map(acc => acc.movements)
+//   .flat()
+//   .reduce((acc, mov) => acc + mov, 0);
+// console.log(overalBalance);
 
-// FLATMAP
+// // FLATMAP
 
-const overalBalance2 = accounts
-  .flatMap(acc => acc.movements)
-  .reduce((acc, mov) => acc + mov, 0);
-console.log(overalBalance);
+// const overalBalance2 = accounts
+//   .flatMap(acc => acc.movements)
+//   .reduce((acc, mov) => acc + mov, 0);
+// console.log(overalBalance);
+
+////// SORTING ARRAYS
+
+const owners = ['jonas', 'Zach', 'Adam', 'Martha'];
+console.log(owners.sort());
+console.log(owners);
+
+// NUMBERS
+console.log(movements);
+// console.log(movements.sort());
+
+// return <0. A, B (keep order)
+// return >0. B,A (switch order)
+
+//ASCENDING
+movements.sort((a, b) => {
+  if (a > b) return 1;
+  if (b > a) return -1;
+});
+
+console.log(movements);
+
+// DESCENDING
+movements.sort((a, b) => {
+  if (a > b) return -1;
+  if (b > a) return 1;
+});
+
+console.log(movements);
