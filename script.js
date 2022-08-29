@@ -485,11 +485,11 @@ console.log(movements.filter(deposit));
 
 ///// FLAT AND FLATMAP METHODS
 
-const arr = [[1, 2, 3], [4, 5, 6], 7, 8];
-console.log(arr.flat());
+// const arr = [[1, 2, 3], [4, 5, 6], 7, 8];
+// console.log(arr.flat());
 
-const arrDeep = [[[1, 2], 3], [4, [5, 6]], 7, 8];
-console.log(arrDeep.flat(2)); // 2 is the level
+// const arrDeep = [[[1, 2], 3], [4, [5, 6]], 7, 8];
+// console.log(arrDeep.flat(2)); // 2 is the level
 
 // const accountMovements = accounts.map(acc => acc.movements);
 // console.log(accountMovements);
@@ -514,12 +514,12 @@ console.log(arrDeep.flat(2)); // 2 is the level
 
 ////// SORTING ARRAYS
 
-const owners = ['jonas', 'Zach', 'Adam', 'Martha'];
+/* const owners = ['jonas', 'Zach', 'Adam', 'Martha'];
 console.log(owners.sort());
 console.log(owners);
 
 // NUMBERS
-console.log(movements);
+console.log(movements); */
 // console.log(movements.sort());
 
 // return <0. A, B (keep order)
@@ -531,16 +531,39 @@ console.log(movements);
 //   if (b > a) return -1;
 // });
 
-movements.sort((a, b) => a - b);
+/* movements.sort((a, b) => a - b);
 
 console.log(movements);
-
+ */
 // DESCENDING
 // movements.sort((a, b) => {
 //   if (a > b) return -1;
 //   if (b > a) return 1;
 // });
-
+/* 
 movements.sort((a, b) => b - a);
 
 console.log(movements);
+ */
+
+const arr = [1, 2, 3, 4, 5, 6, 7];
+console.log(new Array(1, 2, 3, 4, 5, 6, 7));
+
+const x = new Array(7); // creates an array with 7 empty elements
+console.log(x);
+
+//// THE FILL METHOD
+
+// x.fill(1); // an array full of ones
+x.fill(1, 3, 5);
+console.log(x);
+
+arr.fill(23, 2, 6);
+console.log(arr);
+
+// Araay.from
+const y = Array.from({ length: 7 }, () => 1);
+console.log(y);
+
+const z = Array.from({ length: 7 }, (cur, i) => i + 1);
+console.log(z);
