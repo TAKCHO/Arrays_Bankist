@@ -567,3 +567,16 @@ console.log(y);
 
 const z = Array.from({ length: 7 }, (cur, i) => i + 1);
 console.log(z);
+
+// const movementsUI = Array.from(document.querySelectorAll('.movements_value'));
+// console.log(movementsUI);
+
+labelBalance.addEventListener('click', function () {
+  const movementsUI = Array.from(
+    document.querySelectorAll('.movements_value'),
+    el => Number(el.textContent.replace('EUR', ''))
+  );
+  console.log(movementsUI);
+
+  const movementsUI2 = [...document.querySelectorAll('.movements_value')];
+});
