@@ -598,6 +598,26 @@ console.log(bankDepositSum);
 
 const numDeposits1000 = accounts
   .flatMap(acc => acc.movements)
-  .reduce((count, cur) => (cur >= 1000 ? count + 1 : count), 0);
+  // .reduce((count, cur) => (cur >= 1000 ? count + 1 : count), 0);
+  .reduce((count, cur) => (cur >= 1000 ? ++count : count), 0);
 
 console.log(numDeposits1000);
+
+// Prefixed ++ operator
+let a = 10;
+console.log(++a);
+console.log(a);
+
+// N3
+
+const sums = accounts
+  .flatMap(acc => acc.movements)
+  .reduce(
+    (sums, cur) => {
+      cur > 0 ? (sums.deposits += cur) : (sums.withdrawals += cur);
+      return sums;
+    },
+    { deposits: 0, withdrawals: 0 }
+  );
+
+console.log(sums);
